@@ -18,4 +18,4 @@ sed -i 's/#cache_dir/cache_dir/g' /etc/squid3/squid.conf
 
 sed -i "s/ipserver/$IP/g" /etc/squid3/squid.conf
 
-/etc/init.d/squid3 restart
+service squid3 restart
