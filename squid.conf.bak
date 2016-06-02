@@ -715,7 +715,16 @@ acl Safe_ports port 488 # gss-http
 acl Safe_ports port 591 # filemaker
 acl Safe_ports port 777 # multiling http
 acl CONNECT method CONNECT
-acl VPS dst xxx.xxx.xxx.xxx-xxx.xxx.xxx.xxx/255.255.255.25
+acl VPS dst 188.166.190.162-188.166.190.162/255.255.255.255
+
+# Leave coredumps in the first cache dir
+coredump_dir /var/spool/squid
+
+# Add any of your own refresh_pattern entries above these.
+refresh_pattern ^ftp:		1440	20%	10080
+refresh_pattern ^gopher:	1440	0%	1440
+refresh_pattern -i (/cgi-bin/|\?) 0	0%	0
+refresh_pattern .		0	20%	4320
 
 #  TAG: follow_x_forwarded_for
 #	Allowing or Denying the X-Forwarded-For header to be followed to
