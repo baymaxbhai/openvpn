@@ -12,7 +12,7 @@ aptitude -y install squid3
 
 rm -f /etc/squid3/squid.conf
 
-wget -P /etc/squid3/ "https://raw.githubusercontent.com/baymaxbhai/debian7os/master/squid.conf"
+wget -P /etc/squid3/ "https://raw.githubusercontent.com/baymaxbhai/openvpn/master/squid.conf"
 
 sed -i 's/#cache_dir/cache_dir/g' /etc/squid3/squid.conf
 
